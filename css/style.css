@@ -1,0 +1,18 @@
+body {
+  background-color: rgb(46, 44, 44);
+}
+
+h2,
+h1 {
+  font-family: "Heebo";
+}
+
+#header {
+  font-size: 3rem;
+  font-family: "Heebo";
+}
+
+.book-list {
+  margin-top: 50px;
+  visibility: hidden;
+}
