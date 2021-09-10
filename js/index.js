@@ -3,21 +3,36 @@ const placeHolder = '<img src="https://via.placeholder.com/150">';
 const outputList = document.getElementById("list-output");
 const booklist = document.querySelector("#book-list");
 
-
 searchButton.addEventListener("click", () => {
   let searchValue = document.querySelector("input");
   console.log(searchValue.value);
   fetch(
     `https://www.googleapis.com/books/v1/volumes?q=${searchValue.value}`
   ).then((res) => {
-    res.json().then((data) => {
-      displayResults(data);
-    });
+    res
+      .json()
+      .then((data) => {
+        if (data.items.length == 0) {
+
+        } else {
+          displayResults(data);
+        }
+      })
+      .catch(() => {
+        booklist.style.display = "contents";
+        outputList.innerHTML = "Something went wrong...";
+      });
   });
 });
 
+function nothingFound() {
+  booklist.style.display = "contents";
+  outputList.innerHTML = "Nothing found if nothing searched";
+}
+
+
 function displayResults(data) {
-  outputList.innerHTML =""
+  outputList.innerHTML = "";
   data.items.forEach((book, index) => {
     let title = book.volumeInfo.title;
     let author = book.volumeInfo.authors;
@@ -32,9 +47,8 @@ function displayResults(data) {
       '<div class="row mt-4">' +
       formatOutput(img, title, author, description) +
       "</div>";
-      
-  })
-  booklist.classList.add("animation")
+  });
+  booklist.classList.add("animation");
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
