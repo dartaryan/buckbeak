@@ -73,18 +73,25 @@ h1 {
 }
 
 .cardImage {
-  /* max-width: 100%; */
   max-height: 110%;
 
   box-shadow: 0px 0px 2rem rgb(178, 174, 174);
   border-radius: 0.6rem;
-
-
-
-  
 }
 
-.image_div{
+p {
+  font-size: 1.25rem;
+  font-family: "Glory", sans-serif;
+  color: rgb(34, 35, 36);
+}
+
+.bookCard:hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
+  margin: 5% 5%;
+}
+
+.image_div {
   vertical-align: middle;
   text-align: middle;
   margin: 6% 2% 2% 2%;
@@ -102,6 +109,4 @@ h1 {
 #nothingImage {
   vertical-align: middle;
   width: 50%;
-  
 }
-
