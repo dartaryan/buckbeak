@@ -28,7 +28,7 @@ searchButton.addEventListener("click", () => {
 
 function nothingFound() {
   booklist.style.display = "contents";
-  outputList.innerHTML =`<div class="col-lg-6">
+  outputList.innerHTML = `<div class="col-lg-6">
   <div class="row no-gutters">
   <div class="col-md-4">
   <img src="img/nothing.gif" id="nothingImage" alt="Nothing Found">
@@ -42,10 +42,6 @@ function nothingFound() {
   </div>
   </div>
   `;
-
-
-
-
 }
 
 function displayResults(data) {
@@ -69,22 +65,38 @@ function displayResults(data) {
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
-  let htmlCard = `<div class="col-lg-6">
-                        <div class="row no-gutters">
-                        <div class="col-md-4">
+  let htmlCard = `<div class="bookCard">   
                         <img src="${bookImg}" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
                         <div class="card-body">
                         <h5 class="card-title">${bookTitle}</h5>
                         <p class="card-text">Author: ${bookAuthor}</p>
                         <p class="card-text">Description: ${bookDescription}</p>
                         </div>
                         </div>
-                        </div>
-                        </div>
-                        </div>
                         `;
 
   return htmlCard;
 }
+
+// function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
+//   let htmlCard = `<div class="bookCard">
+//                         <div class="col-lg-6">
+//                         <div class="row no-gutters">
+//                         <div class="col-md-4">
+//                         <img src="${bookImg}" class="card-img" alt="...">
+//                         </div>
+//                         <div class="col-md-8">
+//                         <div class="card-body">
+//                         <h5 class="card-title">${bookTitle}</h5>
+//                         <p class="card-text">Author: ${bookAuthor}</p>
+//                         <p class="card-text">Description: ${bookDescription}</p>
+//                         </div>
+//                         </div>
+//                         </div>
+//                         </div>
+//                         </div>
+//                         </div>
+//                         `;
+
+//   return htmlCard;
+// }
