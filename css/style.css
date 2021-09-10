@@ -73,11 +73,13 @@ h1 {
 }
 
 .cardImage {
-  /* max-width: 20%;
-  height: auto; */
+  /* max-width: 100%; */
+  max-height: 110%;
 
   box-shadow: 0px 0px 2rem rgb(178, 174, 174);
   border-radius: 0.6rem;
+
+
 
   
 }
@@ -90,7 +92,6 @@ h1 {
 
 #block_container {
   display: flex;
-  justify-content: center;
   text-align: middle;
 }
 
@@ -104,8 +105,3 @@ h1 {
   
 }
 
-.animation {
-  margin-top: 60px;
-  animation-duration: 1000ms;
-  transition-duration: 1000ms;
-}
