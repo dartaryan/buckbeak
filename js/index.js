@@ -1,6 +1,7 @@
 const searchButton = document.getElementById("search");
 const placeHolder = '<img src="https://via.placeholder.com/150">';
-
+const outputList = document.getElementById("list-output");
+const booklist = document.querySelector("#book-list");
 searchButton.addEventListener("click", () => {
   let searchValue = document.querySelector("input");
   console.log(searchValue.value);
@@ -14,25 +15,27 @@ searchButton.addEventListener("click", () => {
 });
 
 function displayResults(data) {
-  console.log("displayResults");
-  data.forEach((book, index) => {
+  data.items.forEach((book, index) => {
     let title = book.volumeInfo.title;
     let author = book.volumeInfo.authors;
-    let publisher = book.volumeInfo.publisher;
-    let link = book.volumeInfo.previewLink;
-    let isb = book.volumeInfo.industryIdentifiers[1].identifier;
+    let description = book.volumeInfo.description
+      ? book.volumeInfo.description
+      : "No description for this book";
     let img = book.volumeInfo.imageLinks
-      ? item.volumeInfo.imageLinks.thumbnail
+      ? book.volumeInfo.imageLinks.thumbnail
       : placeHolder;
+      booklist.style.display = "";
+    outputList.innerHTML +=
+      '<div class="row mt-4">' +
+      formatOutput(img, title, author, description) +
+      "</div>";
 
-
-
-    formatOutput(bookImg, title);
+    
   });
 }
 
-function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
-  let viewerURL = "book.html?isbn=" + bookIsbn;
+function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
+  //   console.log("inside formatoutput");
   let htmlCard = `<div class="col-lg-6">
                         <div class="row no-gutters">
                         <div class="col-md-4">
@@ -40,15 +43,15 @@ function formatOutput(bookImg, title, author, publisher, bookLink, bookIsbn) {
                         </div>
                         <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class=card-title">${title}</h5>
-                        <p class="card-text">Author: ${author}</p>
-                        <p class="card-text">Publisher: ${publisher}</p>
-                        <a target="_blank" href="${viewerURL}" class="btn btn-secondary">Read me</a>
+                        <h5 class=card-title">${bookTitle}</h5>
+                        <p class="card-text">Author: ${bookAuthor}</p>
+                        <p class="card-text">Description: ${bookDescription}</p>
                         </div>
                         </div>
                         </div>
                         </div>
                         </div>
                         `;
+  //   console.log("before return");
   return htmlCard;
 }
