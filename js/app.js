@@ -10,6 +10,7 @@ $(document).ready(function () {
   $("#search").click(function () {
     outputList.innerHTML = "";
     searchData = $("#search-box").val();
+    
     // Handling empty search input field
     if (searchData === "" || searchData === null) {
       displayError();
@@ -102,5 +103,9 @@ $(document).ready(function () {
   }
 
   //handle error displaying empty search box
+  function displayError() {
+    alert("Please pick a theme to start your journey with a book")
+  }
+
 
 });
