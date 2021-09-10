@@ -6,30 +6,47 @@ const booklist = document.querySelector("#book-list");
 searchButton.addEventListener("click", () => {
   let searchValue = document.querySelector("input");
   console.log(searchValue.value);
-  fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${searchValue.value}`
-  ).then((res) => {
-    res
-      .json()
-      .then((data) => {
-        if (data.items.length == 0) {
-
-        } else {
+  if (searchValue.value === "") {
+    console.log("inside if");
+    nothingFound();
+  } else {
+    fetch(
+      `https://www.googleapis.com/books/v1/volumes?q=${searchValue.value}`
+    ).then((res) => {
+      res
+        .json()
+        .then((data) => {
           displayResults(data);
-        }
-      })
-      .catch(() => {
-        booklist.style.display = "contents";
-        outputList.innerHTML = "Something went wrong...";
-      });
-  });
+        })
+        .catch(() => {
+          booklist.style.display = "contents";
+          outputList.innerHTML = "Something went wrong...";
+        });
+    });
+  }
 });
 
 function nothingFound() {
   booklist.style.display = "contents";
-  outputList.innerHTML = "Nothing found if nothing searched";
-}
+  outputList.innerHTML =`<div class="col-lg-6">
+  <div class="row no-gutters">
+  <div class="col-md-4">
+  <img src="img/nothing.gif" id="nothingImage" alt="Nothing Found">
+  </div>
+  <div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Nothing found if nothing searched</h5>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  `;
 
+
+
+
+}
 
 function displayResults(data) {
   outputList.innerHTML = "";
@@ -59,7 +76,7 @@ function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
                         </div>
                         <div class="col-md-8">
                         <div class="card-body">
-                        <h5 class=card-title">${bookTitle}</h5>
+                        <h5 class="card-title">${bookTitle}</h5>
                         <p class="card-text">Author: ${bookAuthor}</p>
                         <p class="card-text">Description: ${bookDescription}</p>
                         </div>
