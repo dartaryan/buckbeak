@@ -17,6 +17,7 @@ searchButton.addEventListener("click", () => {
 });
 
 function displayResults(data) {
+  outputList.innerHTML =""
   data.items.forEach((book, index) => {
     let title = book.volumeInfo.title;
     let author = book.volumeInfo.authors;
@@ -33,7 +34,7 @@ function displayResults(data) {
       "</div>";
       
   })
-  document.querySelector("#title").classList.add("animation")
+  booklist.classList.add("animation")
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {

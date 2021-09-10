@@ -38,7 +38,8 @@ h1 {
 }
 
 .animation {
-  margin-bottom: 0px;
+  margin-top: 60px;
   animation-duration: 1000ms;
   transition-duration: 1000ms;
+
 }
