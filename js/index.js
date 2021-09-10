@@ -31,7 +31,9 @@ function displayResults(data) {
       '<div class="row mt-4">' +
       formatOutput(img, title, author, description) +
       "</div>";
-  });
+      
+  })
+  document.querySelector("#title").classList.add("animation")
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {

@@ -14,12 +14,31 @@ h1 {
   color: aliceblue;
 }
 
+#introQuote {
+  font-size: 2rem;
+  font-family: "Glory", sans-serif;
+  color: rgb(175, 178, 180);
+}
+
+#saidBy {
+  font-size: 1rem;
+  font-family: "Glory", sans-serif;
+  color: rgb(175, 178, 180);
+  font-weight: bold;
+}
+
 #book-list {
   margin-top: 50px;
   display: none;
   font-family: "Glory", sans-serif;
 }
 
-#introImage{
+#introImage {
   width: 20%;
+}
+
+.animation {
+  margin-bottom: 0px;
+  animation-duration: 1000ms;
+  transition-duration: 1000ms;
 }
