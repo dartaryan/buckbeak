@@ -2,6 +2,8 @@ const searchButton = document.getElementById("search");
 const placeHolder = '<img src="https://via.placeholder.com/150">';
 const outputList = document.getElementById("list-output");
 const booklist = document.querySelector("#book-list");
+
+
 searchButton.addEventListener("click", () => {
   let searchValue = document.querySelector("input");
   console.log(searchValue.value);
@@ -24,18 +26,15 @@ function displayResults(data) {
     let img = book.volumeInfo.imageLinks
       ? book.volumeInfo.imageLinks.thumbnail
       : placeHolder;
-      booklist.style.display = "";
+    booklist.style.display = "contents";
     outputList.innerHTML +=
       '<div class="row mt-4">' +
       formatOutput(img, title, author, description) +
       "</div>";
-
-    
   });
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
-  //   console.log("inside formatoutput");
   let htmlCard = `<div class="col-lg-6">
                         <div class="row no-gutters">
                         <div class="col-md-4">
@@ -52,6 +51,6 @@ function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
                         </div>
                         </div>
                         `;
-  //   console.log("before return");
+
   return htmlCard;
 }

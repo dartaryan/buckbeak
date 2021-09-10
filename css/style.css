@@ -19,3 +19,7 @@ h1 {
   display: none;
   font-family: "Glory", sans-serif;
 }
+
+#introImage{
+  width: 20%;
+}
