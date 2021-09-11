@@ -24,7 +24,7 @@ searchButton.addEventListener("click", () => {
         })
         .catch(() => {
           booklist.style.display = "contents";
-          outputList.innerHTML = `<div class="row"><h2 class="header center grey-text text-lighten-1">Something went wrong...</h2></div>`;
+          outputList.innerHTML = `<div class="row"><h3 class="header center grey-text text-darken-2">Something went wrong...<br>Maybe try a different search?</h3></div>`;
         });
     });
   }
