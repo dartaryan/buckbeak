@@ -7,6 +7,10 @@ body {
   margin: 2% 7% 7% 7%;
 }
 
+.flow-text {
+  color: white;
+}
+
 #search-box {
   font-size: 2rem;
   font-family: 'Glory', sans-serif;
