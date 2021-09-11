@@ -8,17 +8,10 @@ body {
 }
 
 #search-box {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-family: "Glory", sans-serif;
   color: rgb(175, 178, 180);
 }
-
-h2,
-h1 {
-  font-family: "Glory", sans-serif;
-}
-
-
 
 
 .text-center {
