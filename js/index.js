@@ -71,10 +71,10 @@ function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
   </div>
 
     <div class="card-content">
-      <h2 class="bookTitle">${bookTitle}</h2>
+      <h2>${bookTitle}</h2>
       <p>${bookDescription}</p>
       <div>
-      <h3 class="bookAuthor">${bookAuthor}</h3>
+      <h3>${bookAuthor}</h3>
       </div>
     </div>
 </div>;`;
