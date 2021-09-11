@@ -4,11 +4,6 @@ const outputList = document.getElementById("list-output");
 const booklist = document.querySelector("#book-list");
 const errorImage = "img/no-cover.png";
 
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".collapsible");
-  var instances = M.Collapsible.init(elems, options);
-});
-
 searchButton.addEventListener("click", () => {
   let searchValue = document.querySelector("input");
   if (searchValue.value === "") {
@@ -69,7 +64,6 @@ function displayResults(data) {
     booklist.style.display = "contents";
     outputList.innerHTML += formatOutput(img, title, author, description);
   });
-  // handleError();
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
@@ -99,47 +93,3 @@ function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
 
   return htmlCard;
 }
-
-const handleError = () => {
-  let images = document.querySelectorAll(".card-image");
-  images.forEach((image) => {
-    image.onerror = () => {
-      image.setAttribute("src", errorImage);
-      image.nextSibling.nodeValue = "";
-      image.classList.add("brokenImage");
-    };
-  });
-};
-
-{
-  /* 
- function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
-  let htmlCard = `<div class="card horizontal">
-  <div id="block_container">
-    <div class="image_div">
-    <img class="cardImage" src="${bookImg}"/>
-  </div>
-
-    <div class="card-content">
-      <h2>${bookTitle}</h2>
-      <p>${bookDescription}</p>
-      <div>
-      <h3>${bookAuthor}</h3>
-      </div>
-    </div>
-</div>;`;  */
-}
-
-// function nothingFound() {
-//   booklist.style.display = "contents";
-//   outputList.innerHTML = `<div class="bookCard">
-//   <div id="block_container">
-//     <div class="image_div">
-//     <img id="nothingImage" src="img/nothing.gif" alt="Nothing Found"/>
-//   </div>
-
-//     <div class="card-content">
-//       <h2 class="bookTitle">Nothing found if nothing searched</h2>
-//       <p>Maybe try typing something next time to get the best books results Buckbeak can offer</p>
-//     </div>
-// </div>;`;
