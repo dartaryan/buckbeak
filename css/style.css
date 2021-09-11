@@ -21,11 +21,11 @@ body {
   text-align: center;
 } */
 
-/* #header {
-  font-size: 5rem;
+#header {
+  font-size: 6rem;
   font-family: "Glory", sans-serif;
   color: aliceblue;
-} */
+}
 
 .bookCard {
   background-color: rgb(208, 208, 206);
@@ -148,3 +148,4 @@ p {
 #header {
   color: rgb(255, 182, 46);
 } */
+
