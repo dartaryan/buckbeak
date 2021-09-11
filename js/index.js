@@ -64,7 +64,7 @@ function displayResults(data) {
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
-  let htmlCard = `<div class="bookCard">
+  let htmlCard = `<div class="card horizontal">
   <div id="block_container">
     <div class="image_div">
     <img class="cardImage" src="${bookImg}"/>
