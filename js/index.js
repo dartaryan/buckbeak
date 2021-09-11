@@ -44,9 +44,12 @@ function nothingFound() {
 
 function displayResults(data) {
   outputList.innerHTML = "";
-  data.items.forEach((book, index) => {
+  data.items.forEach((book) => {
     let title = book.volumeInfo.title;
-    let author = book.volumeInfo.authors;
+    let author = book.volumeInfo.authors
+      ? book.volumeInfo.authors
+      : "No info about the author of this book";
+
     let description = book.volumeInfo.description
       ? book.volumeInfo.description
       : "No description for this book";
