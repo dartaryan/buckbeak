@@ -59,7 +59,7 @@ function displayResults(data) {
 }
 
 function formatOutput(bookImg, bookTitle, bookAuthor, bookDescription) {
-	let htmlCard = `<div class="col s12 m12 l6">
+	let htmlCard = `<div class="col s12 m12 l10 offset-l1">
 	<div class="card horizontal" style="background-color: rgb(197, 194, 194);">
 		<div class="card-image"> <img class="card-img" src="${bookImg}" alt="${bookTitle}" /> </div>
 		<div class="card-stacked">
